@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"
+    "http://getahead.org/dwr/dwr10.dtd">
+<!-- dwr配置文件根元素 -->
+<dwr>
+	<!-- allow配置后台java类与前端JS关联 -->
+	<allow>
+		<create javascript="recommendauthor" creator="new">
+			<param name="class" value="com.web.dwr.RecommendAuthorDwr"></param>
+		</create>
+		<convert match="com.web.bean.AuthorPage" converter="bean"></convert>
+		<convert match="com.web.bean.Follow" converter="bean"></convert>
+		<!-- 分类文章 -->
+		
+		<create javascript="sort" creator="new">
+			<param name="class" value="com.web.dwr.SortDwr"></param>
+		</create>
+		<convert match="com.web.bean.ArticlePage" converter="bean"></convert>
+		<convert match="com.web.bean.Article" converter="bean"></convert>
+		<!-- 验证密码-->
+		<create javascript="check" creator="new">
+			<param name="class" value="com.web.dwr.CheckPwdDwr"></param>
+		</create>
+		<convert match="com.web.bean.UserLogin" converter="bean"></convert>
+		<!-- 注册验证-->
+		<create javascript="reg" creator="new">
+			<param name="class" value="com.web.dwr.UserLoginDwr"></param>
+		</create>
+		<convert match="com.web.bean.UserLogin" converter="bean"></convert>	
+		<!--修改信息-->
+		<create javascript="userinfo" creator="new">
+			<param name="class" value="com.web.dwr.UserInfoDwr"></param>
+		</create>
+		<convert match="com.web.bean.UserInfo" converter="bean"></convert>
+		<!-- 文章显示、推荐 -->
+		<create javascript="readArticle" creator="new">
+			<param name="class" value="com.web.dwr.ReadArticleDwr"></param>
+		</create>
+		<!-- 删除文章 -->
+		<create creator="new" javascript="DeleteArticle">
+      		<param name="class" value="com.web.dwr.DeleteArticleDwr"/>
+    	</create>
+		
+		<convert match="com.web.bean.Favorite" converter="bean"></convert>		
+		<convert match="com.web.bean.ReadArticle" converter="bean"></convert>	
+		<convert match="com.web.bean.Follow" converter="bean"></convert>	
+		<convert match="com.web.bean.Likes" converter="bean"></convert>	
+		<convert match="com.web.bean.Message" converter="bean"></convert>	
+		<convert match="com.web.bean.MessageReply" converter="bean"></convert>	
+		<convert match="com.web.bean.Remark" converter="bean"></convert>	
+		<convert match="com.web.bean.RemarkReply" converter="bean"></convert>	
+		
+	</allow>
+</dwr>
